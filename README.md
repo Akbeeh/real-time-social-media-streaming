@@ -50,3 +50,14 @@ Check the content of `kafka_producer.py` and `kafka_consumer.py`.
 ### 5. Run Python files
 - First, generate the social media data.
 - Simultaneously, the Kafka scripts in order to see the data ingestion and processing in real-time.
+
+### Extra: Setup of pre-commit
+```bash
+pip install pre-commit
+```
+
+Once the `.pre-commit-config.yaml` completed, we need to set up the git hooks scripts.
+
+```bash
+pre-commit install
+```
