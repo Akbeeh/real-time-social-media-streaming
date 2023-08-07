@@ -8,15 +8,22 @@ In this project, we will build a real-time social media streaming pipeline using
 
 ## Steps followed
 
-### 1. Start the Kafka environment
+### 0. Installation & Setup
 Website: https://kafka.apache.org/downloads
 
 ```bash
+# Setup in our PATH (e.g. in the .bashrc)
+export KAFKA_HOME=/path/to/kafka
+export PATH=$KAFKA_HOME/bin:$PATH
+```
+
+### 1. Start the Kafka environment
+```bash
 # Start ZooKeeper
-apache_kafka_folder/bin/zookeeper-server-start.sh config/zookeeper.properties
+apache_kafka_folder/bin/zookeeper-server-start.sh apache_kafka_folder/config/zookeeper.properties
 
 # Start Kafka
-apache_kafka_folder/bin/kafka-server-start.sh config/server.properties
+apache_kafka_folder/bin/kafka-server-start.sh apache_kafka_folder/config/server.properties
 ```
 
 ### 2. Write a Python script to generate a sample social media data
@@ -40,5 +47,6 @@ For more details, go check the [docs](https://docs.confluent.io/kafka-clients/py
 
 Check the content of `kafka_producer.py` and `kafka_consumer.py`.
 
-### 5. Run the scripts simultaneously
-In order to see the data ingestion and processing in real-time.
+### 5. Run Python files
+- First, generate the social media data.
+- Simultaneously, the Kafka scripts in order to see the data ingestion and processing in real-time.
